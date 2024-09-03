@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
                     FaxNumber = medicalFacilityDto.FaxNumber,
                     CountryCode = medicalFacilityDto.CountryCode,
                     PictureUrl = medicalFacilityDto.PictureUrl,
-                    CreatedAt = DateTime.UtcNow
+                    CreatedAt = DateTime.UtcNow 
                 };
 
                 _dbContext.MedicalFacilities.Add(medicalFacility);
