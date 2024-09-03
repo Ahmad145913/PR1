@@ -15,5 +15,6 @@ namespace WebApplication1.Models
         public DateTime CreatedAt { get; set; }
 
         public byte[]? ProfilePicture { get; set; }
+        public bool isActive { get; set; }
     }
 }

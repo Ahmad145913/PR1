@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
 using WebApplication1.Models;
 using WebApplication1.ViewModels;
 
@@ -12,6 +13,12 @@ namespace WebApplication1.Data
             : base(options)
         {
         }
+        public DbSet<FacilityType> FacilityTypes { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<MedicalDepartment> MedicalDepartments { get; set; }
+        public DbSet<MedicalFacility> MedicalFacilities { get; set; }
+        public DbSet<Physician> Physicians { get; set; }
+        public DbSet<ResourceCategory> ResourceCategories { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);

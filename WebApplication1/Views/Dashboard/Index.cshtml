@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Facility Owner Dashboard";
+}
+
+<h2>Facility Dashboard</h2>
+<br />
+<a class="btn btn-primary" href="@Url.Action("CreateMedicalFacility", "Dashboard")">Create New Facility</a>
+
+<hr />
+<table class="table">
+    <thead>
+        <tr>
+            <th>Facility Name</th>
+            <th>Location</th>
+            <th>Type</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var facility in Model)
+        {
+            <tr>
+                <td>@facility.Name</td>
+                <td>@facility.Location.LocationName</td>
+                <td>@facility.FacilityType.Name</td>
+                <td>@facility.PhoneNumber</td>
+                <td>
+                    <a href="@Url.Action("Edit", "Facility", new { id = facility.Id })">Edit</a> |
+                    <a href="@Url.Action("Details", "Facility", new { id = facility.Id })">Details</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

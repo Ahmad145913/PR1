@@ -1,0 +1,56 @@
+﻿@model WebApplication1.Models.MedicalFacility
+
+<h2>Create Medical Facility</h2>
+
+<form asp-action="CreateMedicalFacility" method="post">
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label asp-for="Id"></label>
+        <input type="text" name="Id" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LocationId"></label>
+        <select name="LocationId" class="form-control">
+            <!-- Populate this with locations -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="ManagerId"></label>
+        <select name="ManagerId" class="form-control">
+            <!-- Populate this with managers -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="FacilityTypeId"></label>
+        <select name="FacilityTypeId" class="form-control">
+            <!-- Populate this with facility types -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber"></label>
+        <input type="text" name="PhoneNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="FaxNumber"></label>
+        <input type="text" name="FaxNumber" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="CountryCode"></label>
+        <input type="text" name="CountryCode" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmergencyNumber"></label>
+        <input type="text" name="EmergencyNumber" class="form-control" />
+    </div>
+    <!-- Add other form fields similarly -->
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

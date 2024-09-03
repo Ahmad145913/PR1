@@ -18,6 +18,8 @@ namespace WebApplication1.ViewModels
         [Display(Name = "Email")]
         public string Email { get; set; }
         [Required]
+        public string Password { get; set; }
+        [Required]
         [Display(Name = "Phone Number")]
         public string phoneNumber { get; set; }
 
